@@ -1,0 +1,59 @@
+form {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+  }
+   
+  form > div {
+    padding: 5px;
+  }
+   
+  input, select, textarea {
+    width: 100%;
+  }
+   
+  textarea {
+    height: 80px;
+  }
+   
+  .actions-panel {
+    margin-top: 10px;
+    align-self: center;
+  }
+   
+  .actions-panel > button:first-child {
+    margin: 5px;
+  }
+        /*
+        The following code refrenced below to set the color of each form control's border was found at
+        https://v17.angular.io/guide/form-validation#control-status-css-classes*/
+        
+  .ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }
+  
+  .alert div {
+    background-color: #fed3d3;
+    color: #820000;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: .5rem;
+  }
+  
+  select {
+    width: 100%;
+    padding: .5rem;
+  }

@@ -1,0 +1,97 @@
+<form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+    <label for="flName">Name:</label>
+    <input
+    [(ngModel)]="formData.flName"
+        type="text"
+        id="flName"
+        name="flName"
+        class="form-control"
+        minlength="5"
+        pattern="[A-Za-z\s]+"
+        required
+        />
+        <br>
+        <label for="eMail">Email:</label>
+        <input
+        [(ngModel)]="formData.eMail"
+            type="email"
+            id="eMail"
+            name="eMail"
+            class="form-control"
+            required
+            />
+            <br>
+            <label for="pNumber">Phone Number:</label>
+            <input
+            [(ngModel)]="formData.pNumber"
+                type="number"
+                id="pNumber"
+                name="pNumber"
+                class="form-control"
+                minlength="10"
+                required
+                />
+                <br>
+                <label for="dateOB">Date of Birth:</label>
+                <input
+                [(ngModel)]="formData.dateOB"
+                type="date"
+                id="dateOB"
+                name="dateOB"
+                class="form-control"
+                required
+                />
+                <br>
+                <label for="streetAdrs">Street Address:</label>
+                <input
+                [(ngModel)]="formData.streetAdrs"
+                type="text"
+                required
+                />
+                <br>
+                    <div>
+                <label for="pRovince">Province</label>
+                <select 
+                [(ngModel)]="formData.pRovince"
+                id="pRovince" 
+                name="pRovince"
+                required
+                >
+                    <option value='BC'>British Columbia</option>
+                    <option value='AB'>Alberta</option>
+                    <option value='SK'>Saskatchewan</option>
+                    <option value='MB'>Manitoba</option>
+                    <option value='ON'>Ontario</option>
+                </select>
+                    </div>
+                    <br>
+                    <div>
+                    <label for="wCountry">Country</label>
+                <select 
+                [(ngModel)]="formData.wCountry"
+                id="wCountry" 
+                name="wCountry"
+                CountryValidator
+                required
+                >
+                    <option value='CA'>Canada</option>
+                    <option value='USA'>United States of America</option>
+                    <option value='JP'>Japan</option>
+                    <option value='BR'>Brazil</option>
+                    <option value='FR'>France</option>
+                </select>
+                <br>
+                <br>
+                <label for="aTC">Please Accept Terms and Conditions</label>
+                <input
+                [(ngModel)]="formData.cBox"
+                type="checkbox"
+                id="aTC"
+                name="aTC"
+                class="form-control"
+                CheckboxValidator
+                required
+                />
+                <button id="submit" [disabled]="!registerForm.valid">Submit</button>
+                </div>
+            </form>
